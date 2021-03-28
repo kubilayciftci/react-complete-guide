@@ -1,23 +1,46 @@
 import React, {Component} from 'react';
 
 import Navbar from "./components/Navbar";
-import User from "./components/User";
 import './App.css';
+import Users from "./components/Users";
 
 class App extends Component {
+    state = {
+        users: [
+            {
+                id: 1,
+                name: "John Wick",
+                salary: "2000",
+                department: "HR"
+            },
+            {
+                id: 2,
+                name: "Clark Kent",
+                salary: "3000",
+                department: "Q&A"
+            },
+            {
+                id: 3,
+                name: "Bruce Wayne",
+                salary: "4000",
+                department: "Business"
+            }
+        ]
+    }
+
+    deleteUser = (id) => {
+        this.setState({
+            users: this.state.users.filter(user => id !== user.id)
+        })
+
+    }
+
     render() {
         return (
             <div className={"container"}>
                 <Navbar/>
                 <hr/>
-                <User name={"John"}
-                      department={"HR"}
-                      salary={"1000"}
-                      company={"ABC"}
-                />
-                <User name={"Jack"}
-                      department={"Q&A"}
-                      company={"ABC"}/>
+                <Users deleteUser={this.deleteUser} users={this.state.users}/>
             </div>
         );
     }
