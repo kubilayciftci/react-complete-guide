@@ -1,22 +1,22 @@
 {
-    "users": [
-        {
-            "id": "uniqe-1",
-            "name": "John Wick",
-            "salary": "2000",
-            "department": "Q&A"
-        },
-        {
-            "id": "uniqe-2",
-            "name": "Clark Kent",
-            "salary": "2000",
-            "department": "HR"
-        },
-        {
-            "id": "uniqe-2",
-            "name": "Bruce Wayne",
-            "salary": "2000",
-            "department": "Business"
-        }
-    ]
+  "users": [
+    {
+      "id": "uniqe-2",
+      "name": "Clark Kent",
+      "salary": "2000",
+      "department": "HR"
+    },
+    {
+      "id": "uniqe-3",
+      "name": "Bruce Wayne",
+      "salary": "2000",
+      "department": "Business"
+    },
+    {
+      "name": "Ali Veli",
+      "department": "Test",
+      "salary": "100000",
+      "id": "oRquK9v"
+    }
+  ]
 }
