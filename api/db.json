@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "id": "uniqe-1",
+            "name": "John Wick",
+            "salary": "2000",
+            "department": "Q&A"
+        },
+        {
+            "id": "uniqe-1",
+            "name": "Clark Kent",
+            "salary": "2000",
+            "department": "HR"
+        },
+        {
+            "id": "uniqe-1",
+            "name": "Bruce Wayne",
+            "salary": "2000",
+            "department": "Business"
+        }
+    ]
+}
