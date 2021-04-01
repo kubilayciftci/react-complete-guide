@@ -32,11 +32,11 @@ class User extends Component {
         })
     }
 
-    onDeleteUser = (dispatch,e) => {
-        const {id} = this.props;
-        
-       // Consumer Dispatch
-       dispatch({type : "DELETE_USER",payload:id});
+    onDeleteUser = (dispatch, e) => {
+        const { id } = this.props;
+
+        // Consumer Dispatch
+        dispatch({ type: "DELETE_USER", payload: id });
     }
     render() {
         //Destructing
@@ -51,10 +51,10 @@ class User extends Component {
 
                         return (
                             <div className={"col-md 8 mb-4"}>
-                                <div className={"card"}>
+                                <div className={"card"} style={isVisible ? { backgroundColor: "#A8B2BA",color:"white"} : null}>
                                     <div className={"card-header d-flex justify-content-between"}>
                                         <h4 className={"d-inline"} onClick={this.onClickEvent.bind(this)}>{name}</h4>
-                                        <i onClick = {this.onDeleteUser.bind(this,dispatch)} className = "far fa-trash-alt" style = {{cursor : "pointer"}}></i>
+                                        <i onClick={this.onDeleteUser.bind(this, dispatch)} className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
                                     </div>
                                     {
                                         isVisible ?
