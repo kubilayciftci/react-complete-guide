@@ -43,7 +43,7 @@ class AddUser extends Component {
             department: department,
             salary: salary
         }
-        const response = await axios.post("http://localhost:3004/users",newUser);
+        await axios.post("http://localhost:3004/users",newUser);
 
         dispatch({ type: "ADD_USER", payload: newUser });
         console.log(newUser);

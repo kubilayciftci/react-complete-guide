@@ -17,6 +17,12 @@
       "department": "Test",
       "salary": "100000",
       "id": "oRquK9v"
+    },
+    {
+      "name": "Kubilay",
+      "department": "Ciftci",
+      "salary": "1000",
+      "id": "vsWEqk7"
     }
   ]
 }
