@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "id": "uniqe-2",
-      "name": "Clark Kent",
+      "name": "Clark",
       "salary": "2000",
-      "department": "HR"
+      "department": "Hero",
+      "id": "uniqe-2"
     },
     {
       "id": "uniqe-3",
@@ -19,10 +19,28 @@
       "id": "oRquK9v"
     },
     {
-      "name": "Kubilay",
-      "department": "Ciftci",
-      "salary": "1000",
+      "name": "Kubilay Çiftci",
+      "salary": "9500",
+      "department": "SAAS",
       "id": "vsWEqk7"
+    },
+    {
+      "name": "Ali Temel",
+      "department": "Pazarlama",
+      "salary": "1000",
+      "id": "v_Ewyuw"
+    },
+    {
+      "name": "Ali Veli",
+      "department": "123",
+      "salary": "123",
+      "id": "1UjGSGd"
+    },
+    {
+      "name": "Mehmet",
+      "department": "Turk",
+      "salary": "4000",
+      "id": "MBi4wAP"
     }
   ]
 }

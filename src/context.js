@@ -15,6 +15,11 @@ const reducer = (state, action) => {
                 ...state,
                 users: [...state.users, action.payload]
             }
+        case "UPDATE_USER":
+            return {
+                ...state,
+                users: state.users.map(user => user.id === action.payload.id ? action.payload : user)
+            }
         default:
             return state;
     }
@@ -29,7 +34,6 @@ export class UserProvider extends Component {
 
     componentDidMount = async () => {
         const response = await axios.get("http://localhost:3004/users");
-        console.log(response);
         this.setState({
             users: response.data
         })

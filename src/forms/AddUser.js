@@ -22,19 +22,28 @@ class AddUser extends Component {
         visible: true,
         name: "",
         department: "",
-        salary: ""
+        salary: "",
+        error: false
     }
     changeVisibility = () => {
         this.setState({
             visible: !this.state.visible
         });
     }
+    validateForm = () => {
+        const { name, salary, department } = this.state;
+        if (name === "" || salary === "" | department === "") {
+            return false;
+        }
+        return true;
+    }
+
     changeInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-    addUser = async (dispatch,e) => {
+    addUser = async (dispatch, e) => {
         e.preventDefault();
         const { name, department, salary } = this.state;
 
@@ -43,18 +52,27 @@ class AddUser extends Component {
             department: department,
             salary: salary
         }
-        await axios.post("http://localhost:3004/users",newUser);
+
+        if (!this.validateForm()) {
+            this.setState({
+                error: true
+            })
+            return;
+        }
+
+        await axios.post("http://localhost:3004/users", newUser);
 
         dispatch({ type: "ADD_USER", payload: newUser });
-        console.log(newUser);
+
+        this.props.history.push("/");
     }
     render() {
-        const { visible, name, salary, department } = this.state;
+        const { visible, name, salary, department, error } = this.state;
 
         return (<UserConsumer>
             {
                 value => {
-                    const{dispatch}=value;
+                    const { dispatch } = value;
                     return (
                         <div className="col-md 8 mb-4">
                             <button onClick={this.changeVisibility} className="btn btn-dark btn-block mb-2">{visible ? "Hide Form" : "Show Form"}</button>
@@ -64,7 +82,13 @@ class AddUser extends Component {
                                         <h4>Add User Form</h4>
                                     </div>
                                     <div className="card-body">
-                                        <form onSubmit={this.addUser.bind(this,dispatch)}>
+                                        {
+                                            error ?
+                                                <div className="alert alert-danger">
+                                                    Please fill all the blank!
+                                            </div> : null
+                                        }
+                                        <form onSubmit={this.addUser.bind(this, dispatch)}>
                                             <div className="form-group">
                                                 <label htmlFor="name">Name</label>
                                                 <input
